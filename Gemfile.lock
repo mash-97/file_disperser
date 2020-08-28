@@ -1,0 +1,31 @@
+GIT
+  remote: https://github.com/mash-97/mashz.git
+  revision: 9d5a44ddaa047aa72bb939364751b374029d2bf4
+  branch: master
+  specs:
+    mashz (0.2.0)
+
+PATH
+  remote: .
+  specs:
+    file_disperser (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.14.1)
+    rake (12.3.3)
+    tty-tree (0.4.0)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  file_disperser!
+  mashz!
+  minitest (~> 5.0)
+  rake (~> 12.0)
+  tty-tree
+
+BUNDLED WITH
+   1.17.2
