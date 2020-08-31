@@ -6,8 +6,13 @@ class FileDisperserTest < Minitest::Test
   end
 
   def test_it_does_something_useful
-    assert FileDisperser::FileDisperser.new
+    assert_raise("ArgumentError") do
+      FileDisperser::FileDisperser.new
+    end
   end
+
+  def test_file_disperser
+  end 
 
   def test_folder_generator()
     $mashz_log.level = Logger::WARN
@@ -21,7 +26,7 @@ class FileDisperserTest < Minitest::Test
 
     begin
       Timeout.timeout(10) do
-        total_dirs = f.gen_folders()
+        total_dirs = f.gen_folders().length()
         $fdspsr_log.info("Total Directories Created: #{total_dirs}")
       end
     rescue => exception
