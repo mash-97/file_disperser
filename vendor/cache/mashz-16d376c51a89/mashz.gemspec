@@ -9,10 +9,10 @@ Gem::Specification.new do |s|
   s.metadata = { "source_code_uri" => "https://github.com/mash-97/Gems/tree/master/mashz" } if s.respond_to? :metadata=
   s.require_paths = ["lib".freeze]
   s.authors = ["mash97".freeze]
-  s.date = "2020-08-28"
+  s.date = "2020-09-01"
   s.description = "Some extended ruby features for shortcut uses.".freeze
   s.email = "mahimnhd97@gmail.com".freeze
-  s.files = ["Rakefile".freeze, "lib/extended_classes.rb".freeze, "lib/mashz.rb".freeze, "lib/miscellaneous.rb".freeze, "lib/programs".freeze, "lib/programs/file_operators".freeze, "lib/programs/file_operators/cprx.rb".freeze, "lib/programs/file_operators/fc.rb".freeze, "mashz.gemspec".freeze, "test/cprx_test.rb".freeze, "test/mashz_test.rb".freeze]
+  s.files = ["Rakefile".freeze, "lib/exended_standard_classes".freeze, "lib/exended_standard_classes/array.rb".freeze, "lib/exended_standard_classes/dir.rb".freeze, "lib/exended_standard_classes/file.rb".freeze, "lib/exended_standard_classes/float.rb".freeze, "lib/exended_standard_classes/integer.rb".freeze, "lib/exended_standard_classes/object.rb".freeze, "lib/exended_standard_classes/string.rb".freeze, "lib/mashz.rb".freeze, "lib/miscellaneous.rb".freeze, "lib/programs".freeze, "lib/programs/file_operators".freeze, "lib/programs/file_operators/cprx.rb".freeze, "lib/programs/file_operators/fc.rb".freeze, "lib/programs/file_operators/rfg.rb".freeze, "mashz.gemspec".freeze, "test/cprx_test.rb".freeze, "test/mashz_test.rb".freeze, "test/rfg_test.rb".freeze]
   s.homepage = "https://github.com/mash-97/Gems".freeze
   s.licenses = ["Nonstandard".freeze]
   s.rubygems_version = "3.0.3".freeze

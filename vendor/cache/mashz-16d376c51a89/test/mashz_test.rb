@@ -8,7 +8,7 @@ else
 	require './lib/mashz.rb'
 end
 
-class MashzTest< Minitest::Test
+class MashzTest < Minitest::Test
 
 	def test_basic()
 		assert_equal("This Is Test.", "this is test.".titleize())

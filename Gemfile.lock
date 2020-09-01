@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mash-97/mashz.git
-  revision: 9d5a44ddaa047aa72bb939364751b374029d2bf4
+  revision: 16d376c51a89b002924e5b57556804cf6b0d37c3
   branch: master
   specs:
     mashz (0.2.0)

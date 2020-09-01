@@ -11,8 +11,11 @@ $LOG_FORMATS = {
 
 $mashz_log = Logger.new($stdout)
 $mashz_log.formatter = $LOG_FORMATS[:simple]
+$mashz_log.level = Logger::WARN
 
 module Mashz
+  
+  # Loads ruby files recursively and interactively inside the give directory path.
   def load_interactively(dir_path, regexp = /\.rb$/, tabs="")
       # dir_path = File.absolute_path(dir_path)
       return false if not Dir.exist?(dir_path)
@@ -48,5 +51,3 @@ end
 
 include Mashz
 Mashz::load_interactively(File.dirname(File.absolute_path(__FILE__)))
-# puts("Loading extended classes: #{require_relative("./extended_classes.rb")}")
-# puts("Loading featured programs: #{require_relative("./programs/programs.rb")}")

@@ -18,4 +18,12 @@ module Mashz::Miscellaneous
   		end
   	end
   end
+  
+  class FileValidation
+	def self.exist?(*files_path)
+		files_path.each{|path|
+			return false if not File.exist?(path)
+		}
+	end
+  end	
 end

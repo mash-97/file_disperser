@@ -1,6 +1,8 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
 require "rake/clean"
+require "tty-tree"
+require_relative "test/test_paths"
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -8,30 +10,58 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-task :test => ["clean:test_base", :stand_test_base]
+task :test => ["clean:test_base", "clean:assets", "check:assets", "check:test_base"]
 task :default => :test
 
-desc "create test_base inside test directory"
-task(:stand_test_base) do
-  puts("\nstand_test_base: running")
-  path = File.join("test", "test_base")
 
-  FileUtils.mkdir(path) if not Dir.exist?(path)
-  puts("status: #{Dir.exist?(path)}")
-  puts("stand_test_base: complete")
-  puts("\n")
-end
 
 namespace :show do
   task :test_base do
+    tree = TTY::Tree.new(TestHelper::TEST_BASE_PATH)
+    puts(tree.render)
+  end
+  task :assets do
+    tree = TTY::Tree.new(TestHelper::TEST_BASE_PATH)
+    puts(tree.render)
   end
 end
+
+namespace :check do
+  task :assets do
+    puts("Checking #{TestHelper::ASSETS_PATH}")
+    if not Dir.exist?(TestHelper::ASSETS_PATH) then
+      puts("Doesn't exist, so creating one!")
+      FileUtils.mkdir(TestHelper::ASSETS_PATH)
+      puts("Created!")
+    else
+      puts("Exists!")
+    end
+  end
+
+  task(:test_base) do
+    puts("Checking #{TestHelper::TEST_BASE_PATH}")
+    if not Dir.exist?(TestHelper::TEST_BASE_PATH) then
+      puts("Doesn't exist, so creating one!")
+      FileUtils.mkdir(TestHelper::TEST_BASE_PATH)
+      puts("Created!")
+    else
+      puts("Exists!")
+    end
+  end
+end
+
 namespace :clean do
   task :test_base do
     puts("clean:test_base :: running")
-    path = File.join("test", "test_base")
-    FileUtils.rm_r(Dir["#{path}/*"], verbose: true)
-    # FileUtils.mkdir(path) if Dir.exist?(path)
+    FileUtils.rm_r(Dir["#{TestHelper::TEST_BASE_PATH}/*"])
     puts("clean:test_base :: complete")
   end
+
+  task :assets do
+    puts("clean:assets :: running")
+    FileUtils.rm_r(Dir["#{TestHelper::ASSETS_PATH}/*"])
+    puts("clean:assets :: complete")
+  end
+
+  task :test_dumps => [:test_base, :assets]
 end
