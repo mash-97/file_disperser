@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mash-97/mashz.git
-  revision: 16d376c51a89b002924e5b57556804cf6b0d37c3
+  revision: 494b10e40926f0fc610dc86a8d6107303591f93c
   branch: master
   specs:
     mashz (0.2.0)
@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    file_disperser (0.1.0)
+    file_disperser (0.2.0)
 
 GEM
   remote: https://rubygems.org/

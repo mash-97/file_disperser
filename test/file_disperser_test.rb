@@ -1,3 +1,4 @@
+require "minitest/autorun"
 require "test_helper"
 
 $fdspsr_log.level = Logger::WARN

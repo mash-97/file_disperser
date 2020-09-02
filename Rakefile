@@ -2,8 +2,8 @@ require "bundler/gem_tasks"
 require "rake/testtask"
 require "rake/clean"
 require "tty-tree"
-require_relative "test/test_paths"
 
+require_relative "test/test_helper"
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
   t.libs << "lib"
@@ -21,8 +21,12 @@ namespace :show do
     puts(tree.render)
   end
   task :assets do
-    tree = TTY::Tree.new(TestHelper::TEST_BASE_PATH)
+    tree = TTY::Tree.new(TestHelper::ASSETS_PATH)
     puts(tree.render)
+  end
+
+  task :load_paths do
+    puts($LOAD_PATH)
   end
 end
 
@@ -63,5 +67,5 @@ namespace :clean do
     puts("clean:assets :: complete")
   end
 
-  task :test_dumps => [:test_base, :assets]
+  task :all => [:test_base, :assets]
 end
