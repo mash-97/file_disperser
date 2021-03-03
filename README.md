@@ -15,13 +15,12 @@ Well! I often happened to use these for my daily system tasks somehow.
 Disperse/copy given files into the tree of a destination directory with random times.
 It has an another class `FileDisperser::FolderGenerator` by which you can create random folders inside the destination directory with spceified depth-limit and disperse-range, 
 means the depth-limit the generator can go to create folders and the disperse-range the generator can create folders inside a single folder. 
-See into Example section to have idea of using this gem.
+See into Example section to have the idea of using this gem.
 
 
 ## Installation
 
-Right now it can't be found on https://rubygems.org/, cause it's not uploaded there. So what you can do is
-clone or fork it from here.
+Clone the repository by git:
 
 `git clone https://github.com/mash-97/file_disperser.git`
 
